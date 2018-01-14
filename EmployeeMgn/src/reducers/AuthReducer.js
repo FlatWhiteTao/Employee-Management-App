@@ -12,6 +12,7 @@ const INITIAL_STATE = {
 // using reducer to catch the user input
 // by updating project level state
 export default (state = INITIAL_STATE, action) => {
+  console.log(action);
   switch (action.type) {
     case EMAIL_CHANGED:
       // making a new object, taking all props from current

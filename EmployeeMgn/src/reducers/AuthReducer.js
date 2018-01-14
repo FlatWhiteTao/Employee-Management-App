@@ -27,7 +27,13 @@ export default (state = INITIAL_STATE, action) => {
     case PASSWORD_CHANGED:
       return { ...state, password: action.payload };
     case LOGIN_USER_SUCCESS:
-      return { ...state, user: action.payload, error: '', loading: false };
+      return { ...state,
+        // Once user logged in successfully,
+        // reset login form state as initial state.
+        // in order to not cache the username and password
+        ...INITIAL_STATE,
+        user: action.payload
+      };
     case LOGIN_USER_FAIL:
       return { ...state, error: 'Authentication Failed', loading: false };
     case LOGIN_USER:

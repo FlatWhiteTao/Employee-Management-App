@@ -3,7 +3,10 @@ import { View } from 'react-native';
 
 const CardSection = (props) => {
   return (
-    <View style={styles.containerStyle}>
+    // take an array of styles,
+    // the most right will overwrite the left styles
+    // if there are any differences
+    <View style={[styles.containerStyle, props.style]}>
       {props.children}
     </View>
   );

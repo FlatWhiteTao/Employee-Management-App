@@ -50,5 +50,5 @@ const loginUserSuccess = (dispatch, user) => {
     payload: user
   });
   // when login successfully, navigate to the employeeList
-  Actions.employeeList();
+  Actions.main(); // main is the key of employeeList scene
 };

@@ -8,7 +8,7 @@ class EmployeeCreate extends Component {
   onButtonPress() {
     // call the employeeCreate action creator
     const { name, phone, shift } = this.props;
-    this.props.employeeCreate({ name, phone, shift });
+    this.props.employeeCreate({ name, phone, shift: shift || 'Monday' });
   }
 
   render() {
